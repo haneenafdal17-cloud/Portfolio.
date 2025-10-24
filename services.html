@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الخدمات | Services</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: Arial, sans-serif; color: #d7d6b9; overflow-x: hidden; }
+
+.video-bg { position: fixed; top:0; left:0; width:100%; height:100%; object-fit: cover; z-index: -3; }
+@media (max-width: 767px) { .video-desktop { display: none; } .video-mobile { display: block; } }
+@media (min-width: 768px) { .video-desktop { display: block; } .video-mobile { display: none; } }
+
+/* === تعديل الهيدر فقط === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px 20px;
+  background: rgba(100,54,45,0.9);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  direction: ltr;
+}
+
+header .logo { order: 0; }
+header .logo img { height: 70px; }
+
+header nav {
+  order: 1;
+  display: flex;
+  gap: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #d7d6b9;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover { color: #fff; }
+/* === نهاية تعديل الهيدر === */
+
+/* إزالة padding الضخم */
+.overlay { position: relative; background: rgba(50, 30, 20, 0.3); }
+
+/* الخلفية الأغمق تمتد كامل العرض وللفوتر */
+.services-bg {
+  background: rgba(50, 30, 20, 0.5);
+  width: 100%;
+  padding: 150px 20px 40px; /* 150px مساحة بين الهيدر والبداية */
+  min-height: calc(100vh - 60px - 50px); /* يغطي الشاشة بدون الهيدر والفوتر */
+  text-align: center;
+}
+
+/* عنوان الخدمات داخل الخلفية الغامقة */
+.services-bg h1 {
+  font-size: 45px;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+  margin-bottom: 30px;
+}
+
+/* محتوى الصور داخل الخلفية */
+.services-gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:900px; margin:0 auto; }
+.service-box { position:relative; width:100%; padding-top:100%; overflow:hidden; border-radius:10px; cursor:pointer; transition: transform 0.4s ease; }
+.service-box:hover { transform:scale(1.05); }
+.service-box img { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; filter:brightness(70%); transition: filter 0.3s ease; }
+.service-box:hover img { filter:brightness(85%); }
+.service-box h3 { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);  color: #D7D6B9;
+text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); padding:10px 15px; border-radius:5px; font-size:40px; text-align:center; }
+
+
+
+footer { text-align:center; padding:40px 20px; background: rgba(100,54,45,0.9); color:#333; position:relative; z-index:10; }
+footer button { margin:0 5px; padding:5px 12px; cursor:pointer; border:none; border-radius:4px; background:#d7d6b9; color:#64362d; transition: background 0.3s; }
+footer button:hover { background-color:#64362d; color:#d7d6b9; }
+
+@media(max-width:767px) { .services-gallery { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<!-- فيديو الكمبيوتر -->
+<video class="video-bg video-desktop" autoplay muted loop playsinline>
+  <source src="./works/سكن العز-Unnamed-Roaming video-20251024-020815.mp4" type="video/mp4">
+</video>
+
+<!-- فيديو الجوال -->
+<video class="video-bg video-mobile" autoplay muted loop playsinline>
+  <source src="./works/Customized-20251015-164252 (1).mp4" type="video/mp4">
+</video>
+
+<!-- الهيدر -->
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="./works/amna logo-06.png" alt="Logo"></a>
+  </div>
+  <nav>
+    <a href="index.html" data-ar="الصفحة الرئيسية" data-en="Home">الصفحة الرئيسية</a>
+    <a href="services.html" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+  
+  </nav>
+</header>
+
+<!-- المحتوى -->
+<div class="overlay">
+  <div class="services-bg">
+    <h1 data-ar="خدماتنا" data-en="Our Services">خدماتنا</h1>
+    <section class="services-gallery">
+      <div class="service-box">
+        <img src="./works/work11.jfif" alt="تصميم داخلي">
+        <h3 data-ar="تصميم داخلي" data-en="Interior Design">تصميم داخلي</h3>
+      </div>
+      <div class="service-box">
+        <img src="./works/32d17d41-5d56-4f0c-b97c-7ac9a590372e.jpg" alt="تنفيذ المشاريع">
+        <h3 data-ar=" تنفيذ المشاريع" data-en="Project Execution">تنفيذ المشاريع </h3>
+      </div>
+      <div class="service-box">
+        <img src="./works/3b9ed89c-22c1-4d01-9427-d4c3573c356b.jpg" alt="مخططات تنفيذية">
+        <h3 data-ar="مخططات تنفيذية" data-en="Construction Drawings">مخططات تنفيذية </h3>
+      </div>
+      <div class="service-box">
+        <img src="./works/work10-8.jfif" alt="تأثيث ">
+        <h3 data-ar="تأثيث" data-en="Furnishing">تأثيث </h3>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- الفوتر -->
+<footer>
+  <div class="language-switch">
+    <button onclick="setLanguage('ar')">العربية</button>
+    <button onclick="setLanguage('en')">English</button>
+  </div>
+</footer>
+
+<script>
+function setLanguage(lang) {
+  document.querySelectorAll('[data-ar]').forEach(el => {
+    el.textContent = el.getAttribute(lang === 'ar' ? 'data-ar' : 'data-en');
+  });
+}
+</script>
+
+</body>
+</html>
